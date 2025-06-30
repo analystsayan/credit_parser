@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Credit Card Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        form {
+            background: white;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        select, input[type="file"], button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Upload Your Credit Card Statement</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="bank">Select Bank:</label>
+        <select name="bank" id="bank" required>
+            <option value="">-- Choose Bank --</option>
+            <option value="sbi">SBI</option>
+            <option value="axis">AXIS</option>
+        </select>
+
+        <label for="file">Upload PDF:</label>
+        <input type="file" name="file" accept=".pdf" required>
+
+        <button type="submit">Upload</button>
+    </form>
+
+</body>
+</html>
